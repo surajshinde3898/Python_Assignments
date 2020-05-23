@@ -57,28 +57,7 @@ for i in range(1,11):
 
 N= int(input("Enter Row Number"))
 
-if N==1:
-
-    print(1)
-    
-elif N==2:
-
-    print(2**3)
-    
-elif N==3:
-
-    print(3**3)
-    
-elif N==4:
-
-    print(4**3)
-    
-elif N==5:
-
-    print(5**3)
-
-
-
+print(N**3)
 
 
 #5
