@@ -1,0 +1,236 @@
+
+## 1.Write python program to perform bank operations using class and objects.
+
+Conditions:
+        a.Bank name should be static.
+        
+        b.Using menu driven program.
+        
+        1. Deposit
+        
+        2. Withdraw
+        
+        3. Exit
+
+
+
+class Bank:
+
+    Bank_name = 'HDFC'
+    
+    def __init__(self):
+    
+        self.balance = 0.0
+
+
+    def Deposit(self,Name):
+    
+        Amt = float(input("Enter Amount to Deposit:"))
+        
+        self.balance += Amt
+        
+        print(Name," your Account balamce is ",self.balance)
+
+    def Withdraw(self,Name):
+    
+        Amt = float(input("Enter Amount to Withdraw:"))
+        
+        if Amt > self.balance:
+        
+            print("Awkat dekh ke Amount dal be")
+            
+        else:    
+        
+            self.balance -= Amt
+            
+            print(Name," your Account balance is ",self.balance)
+
+
+   
+
+
+Opp = Bank()
+
+while True:
+
+    N = int(input("Enter Choice 1:Deposit , 2:Withdraw , 3:Exit"))
+    
+    if N==1:
+    
+        Opp.Deposit('Suraj')
+        
+        print(Bank.Bank_name)
+        
+    elif N==2:
+    
+        Opp.Withdraw('Suraj')
+        
+        print(Bank.Bank_name)
+        
+    elif N==3:
+    
+        quit()
+
+
+
+
+## 2 Write a Python class named Circle constructed by a radius and
+## two methods which will compute the area and the perimeter of a circle.
+
+
+class Circle:
+
+    def __init__(self):
+    
+        self.pi = 3.14
+        
+    def Circle_Area(self,r):
+    
+        Area = self.pi*(r**2)
+        
+        print(Area)
+        
+
+    def Perimeter_Circle(self,r):
+    
+        Perimeter = 2*self.pi*(r)
+        
+        print(Perimeter)
+        
+        
+
+cal = Circle()
+
+
+cal.Circle_Area(2)
+
+cal.Perimeter_Circle(2)
+        
+
+## 3 Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument. Both classes have a area
+## function which can print the area of the shape where Shape's area is 0 by default.
+     
+class Shape:
+
+    def __init__(self):
+    
+        pass
+        
+    def area(self):
+    
+        return 0
+        
+class Square:
+
+    def __init__(self,l):
+    
+        super().__init__()
+        
+        self.length = l
+        
+
+    def area(self):
+    
+        return self.length*self.length
+
+s =Square(3)
+
+print("the area of square",s.area())
+
+
+## 4 Write a program to count how many reference variables in a program. 
+
+
+import sys
+
+class ref_count():
+
+    def reference(self):
+    
+        print("A")
+
+
+H1 = ref_count()
+
+s1 = H1
+
+print(sys.getrefcount(H1))
+
+
+## 5 write any program to achieve composition in Python
+
+class Salary:
+
+    def __init__(self,pay,bonus):
+    
+        self.pay = pay
+        
+        self.bonus= bonus
+        
+
+    def annual_salary(self):
+    
+        return (self.pay*12)+self.bonus
+
+class employee:
+
+    def __init__(self,name,age,pay,bonus):
+    
+        self.name = name
+        
+        self.age = age
+        
+        self.obj_salary=Salary(pay,bonus)
+
+    def total_salary(self):
+    
+        return self.obj_salary.annual_salary()
+
+emp = employee('max',25,2500,10000)
+
+print(emp.total_salary())
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
